@@ -47,17 +47,21 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void openDialog(){
+    /**
+     * We want to create an alertDialog which has an Icon at Top Center.
+     */
     showDialog(
       context:context,
       builder: (context){
         return AlertDialog(
-          contentPadding: EdgeInsets.all(0),
+          contentPadding: EdgeInsets.all(0), // No default padding
           content: Container(
             //height:300,
             width: MediaQuery.of(context).size.width-40,
             child:Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                // The top Centered icon 
                 Transform.translate(
                   offset:Offset(0,-30),
                   child:Material(
@@ -66,10 +70,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Icon(Icons.account_circle,size:60,color:Colors.white),
                   ),
                 ),
+                // The dummy Text container
                 Container(
                   padding: EdgeInsets.all(30),
                   child: Text("Hey This is a dummy text")
                 ),
+                // the bottom Bar 
                 Container(
                   color: Colors.blue,
                   height:60,
